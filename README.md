@@ -49,5 +49,9 @@ useDefaultList: false,
 ```js
 npm install postcss-autocorrect --save-dev
 ```
+or
+```js
+yarn add postcss-autocorrect --dev
+```
 
 See [PostCSS] docs for examples for your environment.
