@@ -2,7 +2,7 @@
 
 # PostCSS autocorrect [![Build Status][ci-img]][ci]
 
-Correct your everyday typos .
+Correct your everyday typos.
 
 [PostCSS]: https://github.com/postcss/postcss
 [ci-img]:  https://travis-ci.org/DimitrisNL/postcss-autocorrect.svg
@@ -38,7 +38,7 @@ postcss([ require('postcss-autocorrect') ])
             ]
         }),
 ```
-###### You can also set the following, in order to exclude plugin's defaults corrections.
+###### You can also set the following, in order to exclude plugin's defaults corrections :
 ##
 
 ```js
