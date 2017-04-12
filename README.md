@@ -26,7 +26,7 @@ Correct your everyday typos .
 postcss([ require('postcss-autocorrect') ])
 ```
 
-##### !! By default, the plugin only checks for some typos. Pass your own like this
+##### !! By default, the plugin only checks for certain typos. Pass your own like this :
 ##
 
 ```js
@@ -38,7 +38,7 @@ postcss([ require('postcss-autocorrect') ])
             ]
         }),
 ```
-###### You can also set the following, to exclude plugin's defaults corrections.
+###### You can also set the following, in order to exclude plugin's defaults corrections.
 ##
 
 ```js
