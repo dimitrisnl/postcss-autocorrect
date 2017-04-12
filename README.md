@@ -1,4 +1,6 @@
-# PostCSS autocorrect [![Build Status][ci-img]][ci]
+<img src="http://i.imgur.com/cAgUS7w.png" alt="logo" style='margin:0 auto;width:80px;vertical-align:top;display:block' />
+
+<span style='text-align:center;display:block;font-size:22px;'>PostCSS autocorrect [![Build Status][ci-img]][ci]</span>
 
 Correct your everyday typos .
 
