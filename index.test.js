@@ -1,5 +1,6 @@
-var postcss = require('postcss');
+'use strict';
 
+var postcss = require('postcss');
 var plugin = require('./');
 
 function run(input, output, opts) {
