@@ -32,7 +32,7 @@ postcss([ require('postcss-autocorrect') ])
         ({
             providedList: [
               {position: ['postition']},
-              {color: ['colour']}
+              {color: ['colour', 'colors']}
             ]
         }),
 ```
