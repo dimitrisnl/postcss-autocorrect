@@ -1,6 +1,6 @@
 var postcss = require('postcss');
 
-module.exports = postcss.plugin('postcss-jim_is_stupid', function(opts) {
+module.exports = postcss.plugin('postcss-autocorrect', function (opts) {
 
     opts = opts || {};
 
@@ -20,11 +20,11 @@ module.exports = postcss.plugin('postcss-jim_is_stupid', function(opts) {
     // if user has provided input,include them
     if (!!input && input.length > 0) {
 
-        input.forEach(function(obj) {
+        input.forEach(function (obj) {
 
             let key = Object.keys(obj)[0];
 
-            obj[key].forEach(function(value) {
+            obj[key].forEach(function (value) {
                 mistakes.push(value);
                 corrections.push(key);
 
@@ -32,11 +32,11 @@ module.exports = postcss.plugin('postcss-jim_is_stupid', function(opts) {
         });
     }
 
-    return function(css, result) {
+    return function (css) {
 
-        css.walkRules(function(rule) {
+        css.walkRules(function (rule) {
 
-            rule.walkDecls(function(decl, i) {
+            rule.walkDecls(function (decl) {
 
                 let value = decl.prop;
 
@@ -44,10 +44,9 @@ module.exports = postcss.plugin('postcss-jim_is_stupid', function(opts) {
                 if (mistakes.indexOf(value) !== -1) {
 
                     // parse and match
-                    corrections.forEach((c, i, arr) => {
-                        decl.prop = (value === mistakes[i]
-                            ? corrections[i]
-                            : decl.prop);
+                    corrections.forEach((c, i) => {
+                        decl.prop = value === mistakes[i] ?
+                          corrections[i] : decl.prop;
                     });
 
                 }
@@ -56,6 +55,6 @@ module.exports = postcss.plugin('postcss-jim_is_stupid', function(opts) {
 
         });
 
-    }
+    };
 
 });

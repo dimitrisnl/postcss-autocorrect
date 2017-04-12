@@ -10,10 +10,7 @@ function run(input, output, opts) {
         });
 }
 
-/* Write tests here
 
-it('does something', () => {
-    return run('a{ }', 'a{ }', { });
+it('default params', () => {
+    return run('a{heigth:10px}', 'a{height:10px}', { });
 });
-
-*/
