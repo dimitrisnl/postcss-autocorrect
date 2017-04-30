@@ -1,9 +1,9 @@
 ### Upcoming
 
-- Add warning in console
+- Add warning in console - done
 
-- Correct Values
+- Correct Values - done
 
 - Correct Selectors
 
-- Expand default corrections pool
+- Expand default corrections pool - well,hm
