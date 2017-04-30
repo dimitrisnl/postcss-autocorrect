@@ -17,7 +17,7 @@ Correct your everyday typos. Check for typos in both properties and values.
 
 ```css
 .foogee {
-    height: 120px
+    height: 120px;
     color: black;
 }
 ```
