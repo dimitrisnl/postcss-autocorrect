@@ -1,27 +1,27 @@
 'use strict';
 var postcss = require('postcss');
+var data = require('./lib/data');
 
 module.exports = postcss.plugin('postcss-autocorrect', function (opts) {
 
     opts = opts || {};
+    let mistakes = [];
+    let corrections = [];
 
-    var mistakes = [];
-    var corrections = [];
-    let input = opts.providedList || [];
+    let providedList = opts.providedList || [];
 
     // If useDefaultList is true or undefined (by default true)
     let shouldInitiateDefaults = !(opts.useDefaultList === false);
 
-    // If allowed to use default variables, initiate some common cases
+    // Get the default values
     if (shouldInitiateDefaults) {
-        mistakes = ['hieght', 'heigth', 'widht', 'pading'];
-        corrections = ['height', 'height', 'width', 'padding'];
+        mistakes = data.mistakes;
+        corrections = data.corrections;
     }
 
     // if user has provided input,include them
-    if (!!input && input.length > 0) {
-
-        input.forEach(function (obj) {
+    if (!!providedList && providedList.length > 0) {
+        providedList.forEach(function (obj) {
 
             let key = Object.keys(obj)[0];
 
@@ -33,26 +33,35 @@ module.exports = postcss.plugin('postcss-autocorrect', function (opts) {
         });
     }
 
+    function checkParameters(check, line) {
+        let isMistake = mistakes.indexOf(check);
+
+        if (isMistake !== -1) {
+            let fix = corrections[isMistake];
+            console.warn('Error in line ' + line + '.');
+            console.warn('Got "' + check + '" instead of "' + fix + '".');
+            return fix;
+        }
+
+        return check;
+    }
+
     return function (css) {
 
-        css.walkRules(function (rule) {
+        css.walkDecls(function (decl) {
 
-            rule.walkDecls(function (decl) {
+            // check properties
+            decl.prop = checkParameters(decl.prop, decl.source.start.line);
 
-                let value = decl.prop;
+            // check values
+            const values = decl.value.split(' ');
+            const line = decl.source.start.line;
 
-                // if the css property is inside the array with incorrect syntax
-                if (mistakes.indexOf(value) !== -1) {
-
-                    // parse and match
-                    corrections.forEach((c, i) => {
-                        decl.prop = value === mistakes[i] ?
-                          corrections[i] : decl.prop;
-                    });
-
-                }
-
+            const corrected = values.map(v => {
+                return checkParameters(v, line);
             });
+
+            decl.value = corrected.join(' ');
 
         });
 

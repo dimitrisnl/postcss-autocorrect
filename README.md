@@ -2,7 +2,7 @@
 
 # PostCSS autocorrect [![Build Status][ci-img]][ci]
 
-Correct your everyday typos.
+Correct your everyday typos. Check for typos in both properties and values.
 
 [PostCSS]: https://github.com/postcss/postcss
 [ci-img]:  https://travis-ci.org/DimitrisNL/postcss-autocorrect.svg
@@ -11,12 +11,14 @@ Correct your everyday typos.
 ```css
 .foogee {
     heigth: 120px;
+    colour: blakc;
 }
 ```
 
 ```css
 .foogee {
     height: 120px
+    color: black;
 }
 ```
 
@@ -26,20 +28,18 @@ Correct your everyday typos.
 postcss([ require('postcss-autocorrect') ])
 ```
 
-##### !! By default, the plugin only checks for certain typos. Pass your own like this :
-##
+By default, the plugin only checks for certain typos. Pass your own like this :
 
 ```js
 postcss([ require('postcss-autocorrect') ])
         ({
             providedList: [
-              {position: ['postition']},
-              {color: ['colour', 'colors']}
+              {absolute: ['asbolute']},
+              {background: ['backrgound', 'backgrund']}
             ]
         }),
 ```
-###### You can also set the following, in order to exclude plugin's defaults corrections :
-##
+You can also set the following, in order to exclude plugin's defaults corrections :
 
 ```js
 useDefaultList: false,
