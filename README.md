@@ -1,12 +1,12 @@
 <img src="http://i.imgur.com/cAgUS7w.png" alt="logo" style='margin:0 auto;width:80px;vertical-align:top;display:block' />
 
-# PostCSS autocorrect [![Build Status][ci-img]][ci]
+# PostCSS autocorrect [![Build Status][ci-img]][ci]![npm](https://img.shields.io/npm/dt/postcss-autocorrect.svg)
 
 Correct your everyday typos. Check for typos in both properties and values.
 
-[PostCSS]: https://github.com/postcss/postcss
-[ci-img]:  https://travis-ci.org/DimitrisNL/postcss-autocorrect.svg
-[ci]:      https://travis-ci.org/DimitrisNL/postcss-autocorrect
+[PostCSS]:   https://github.com/postcss/postcss
+[ci-img]:    https://travis-ci.org/DimitrisNL/postcss-autocorrect.svg
+[ci]:        https://travis-ci.org/DimitrisNL/postcss-autocorrect
 
 ```css
 .foogee {
