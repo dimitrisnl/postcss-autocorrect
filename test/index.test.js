@@ -1,7 +1,7 @@
 'use strict';
 
 const postcss = require('postcss');
-const plugin = require('./');
+const plugin = require('../');
 
 const run = (input, output, opts) => {
   return postcss([plugin(opts)])
