@@ -1,6 +1,6 @@
 <img src="http://i.imgur.com/cAgUS7w.png" alt="logo" style='margin:0 auto;width:80px;vertical-align:top;display:block' />
 
-# PostCSS autocorrect [![Build Status][ci-img]] [ci]![npm](https://img.shields.io/npm/dt/postcss-autocorrect.svg)
+# PostCSS autocorrect [![Build Status][ci-img]][ci] ![npm](https://img.shields.io/npm/dt/postcss-autocorrect.svg)
 
 Correct your everyday typos. Check for typos in both properties and values.
 
