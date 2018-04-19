@@ -5,8 +5,8 @@
 Correct your everyday typos. Check for typos in both properties and values.
 
 [PostCSS]:   https://github.com/postcss/postcss
-[ci-img]:    https://travis-ci.org/DimitrisNL/postcss-autocorrect.svg
-[ci]:        https://travis-ci.org/DimitrisNL/postcss-autocorrect
+[ci-img]:    https://travis-ci.org/dimitrisnl/postcss-autocorrect.svg
+[ci]:        https://travis-ci.org/dimitrisnl/postcss-autocorrect
 
 ```css
 .foogee {
